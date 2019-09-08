@@ -6,6 +6,7 @@
     <title>vcf-context-item demo</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <script type="module">
+      import '@vaadin/vaadin-icons';
       import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
       import '@polymer/iron-demo-helpers/demo-snippet';
       import '../theme/lumo/vcf-context-item.js';
@@ -20,15 +21,100 @@
         main.hidden {
           opacity: 0;
         }
+        h3 code {
+          display: inline-block;
+          font-weight: normal;
+          padding: var(--lumo-space-s);
+          margin: var(--lumo-space-xs);
+          background: var(--lumo-contrast-5pct);
+          border-radius: var(--lumo-border-radius-s);
+        }
       </style>
     </custom-style>
   </head>
   <body>
     <main class="vertical-section-container centered hidden">
-      <h3>Basic</h3>
+      <h2>Basic Usage Without Menu</h2>
+      <h3>Simple</h3>
       <demo-snippet>
         <template>
-          <vcf-context-item></vcf-context-item>
+          <vcf-context-item>Foobar</vcf-context-item>
+        </template>
+      </demo-snippet>
+      <h3>Focusable</h3>
+      <demo-snippet>
+        <template>
+          <vcf-context-item tabindex="0">Baxquz</vcf-context-item>
+        </template>
+      </demo-snippet>
+      <h3>Disabled</h3>
+      <demo-snippet>
+        <template>
+          <vcf-context-item disabled>Disabled</vcf-context-item>
+        </template>
+      </demo-snippet>
+      <h2>Defining Menu Content</h2>
+      <h3>Using Polymer Template and <code>context-menu-click</code> Event</h3>
+      <demo-snippet>
+        <template>
+          <vcf-context-item class="has-template">
+            Item 1
+            <template>
+              <vaadin-list-box>
+                <vaadin-item>Menu item 1</vaadin-item>
+                <vaadin-item>Menu item 2</vaadin-item>
+              </vaadin-list-box>
+            </template>
+          </vcf-context-item>
+          <vcf-context-item class="has-template">
+            Item 2
+            <template>
+              <vaadin-list-box>
+                <vaadin-item>Menu item 3</vaadin-item>
+                <vaadin-item>Menu item 4</vaadin-item>
+              </vaadin-list-box>
+            </template>
+          </vcf-context-item>
+          <script>
+            window.addEventListener('WebComponentsReady', () => {
+              document.querySelectorAll('vcf-context-item.has-template').forEach(item => {
+                item.addEventListener('context-menu-click', e => {
+                  e.detail.targetItem.textContent = `${e.detail.sourceEvent.target.textContent} selected`;
+                });
+              })
+            });
+          </script>
+        </template>
+      </demo-snippet>
+      <h3>Using <code>menuItems</code> Property</h3>
+      <demo-snippet>
+        <template>
+          <vcf-context-item class="example-1">Item 1</vcf-context-item>
+          <vcf-context-item class="example-1">Item 2</vcf-context-item>
+          <vcf-context-item class="example-1">Item 3</vcf-context-item>
+          <script>
+            window.addEventListener('WebComponentsReady', () => {
+              const items = document.querySelectorAll('vcf-context-item.example-1');
+              items.forEach(item => {
+                const menuItems = [
+                  {
+                    icon: 'vaadin:trash',
+                    text: `Remove ${item.textContent}`,
+                    callback: (item) => item.remove()
+                  },
+                  {
+                    icon: 'vaadin:asterisk',
+                    text: `Highlight ${item.textContent}`,
+                    callback: (item) => {
+                      items.forEach(item => item.style.backgroundColor = 'unset');
+                      item.style.backgroundColor = 'whitesmoke';
+                    }
+                  }
+                ];
+                item.menuItems = menuItems;
+              });
+            });
+          </script>
         </template>
       </demo-snippet>
     </main>
