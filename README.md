@@ -4,7 +4,7 @@
 [![npm version](https://badgen.net/npm/v/@vaadin-component-factory/vcf-context-item)](https://www.npmjs.com/package/@vaadin-component-factory/vcf-context-item)
 <!-- [![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/vaadin-component-factoryvcf-context-item) -->
 
-[Live Demo ↗](https://incubator.app.fi/vcf-network-demo/)
+[Live Demo ↗](https://vcf-context-item.netlify.com/)
 
 ## Installation
 
