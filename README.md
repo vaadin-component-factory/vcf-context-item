@@ -1,5 +1,11 @@
 # &lt;vcf-context-item&gt;
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/web-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![npm version](https://badgen.net/npm/v/@vaadin-component-factory/vcf-context-item)](https://www.npmjs.com/package/@vaadin-component-factory/vcf-context-item)
+<!-- [![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/vaadin-component-factoryvcf-context-item) -->
+
+[Live Demo ↗](https://incubator.app.fi/vcf-network-demo/)
+
 ## Installation
 
 Install `vcf-context-item`:

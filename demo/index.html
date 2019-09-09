@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
     <title>vcf-context-item demo</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-    <script type="module">
-      import '@vaadin/vaadin-icons';
-      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
-      import '@polymer/iron-demo-helpers/demo-snippet';
-      import '../theme/lumo/vcf-context-item.js';
-      window.addEventListener('WebComponentsReady', () => document.querySelector('main').classList.remove('hidden'));
-    </script>
+    <script type="module" src="demo.js"></script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
         main {
           opacity: 1;
-          transition: opacity 1s;
+          transition: opacity 0.5s;
         }
         main.hidden {
           opacity: 0;
@@ -79,7 +73,7 @@
             window.addEventListener('WebComponentsReady', () => {
               document.querySelectorAll('vcf-context-item.has-template').forEach(item => {
                 item.addEventListener('context-menu-click', e => {
-                  e.detail.targetItem.textContent = `${e.detail.sourceEvent.target.textContent} selected`;
+                  e.detail.targetItem.textContent = e.detail.sourceEvent.target.textContent + ' selected';
                 });
               })
             });
@@ -99,12 +93,12 @@
                 const menuItems = [
                   {
                     icon: 'vaadin:trash',
-                    text: `Remove ${item.textContent}`,
+                    text: 'Remove ' + item.textContent,
                     callback: (item) => item.remove()
                   },
                   {
                     icon: 'vaadin:asterisk',
-                    text: `Highlight ${item.textContent}`,
+                    text: 'Highlight ' + item.textContent,
                     callback: (item) => {
                       items.forEach(item => item.style.backgroundColor = 'unset');
                       item.style.backgroundColor = 'whitesmoke';
