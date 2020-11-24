@@ -55,9 +55,8 @@ Add `<vcf-context-item>` element to the page:
 
   To contribute to the component, please read [the guideline](https://github.com/vaadin/vaadin-core/blob/master/CONTRIBUTING.md) first.
     
-## Vaadin Prime
-
-This component is available in the Vaadin Prime subscription. It is still open source, but you need to have a valid CVAL license in order to use it. Read more at: https://vaadin.com/pricing
+## Vaadin Pro
+This component is available in the Vaadin Pro subscription. It is still open source, but you need to have a valid CVAL license in order to use it. Read more at: [Pricing](https://vaadin.com/pricing)
 
 ## License
 
