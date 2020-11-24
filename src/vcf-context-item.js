@@ -2,7 +2,6 @@ import { html, PolymerElement } from '@polymer/polymer/polymer-element';
 import { ThemableMixin } from '@vaadin/vaadin-themable-mixin';
 import { ElementMixin } from '@vaadin/vaadin-element-mixin';
 import { ItemMixin } from '@vaadin/vaadin-item/src/vaadin-item-mixin';
-import '@vaadin/vaadin-license-checker/vaadin-license-checker';
 import '@polymer/iron-icon';
 import '@vaadin/vaadin-item';
 import '@vaadin/vaadin-button';
@@ -111,19 +110,6 @@ class VcfContextItem extends ItemMixin(ElementMixin(ThemableMixin(PolymerElement
         observer: '_menuTemplateChanged'
       }
     };
-  }
-
-  /**
-   * @protected
-   */
-  static _finalizeClass() {
-    super._finalizeClass();
-
-    const devModeCallback = window.Vaadin.developmentModeCallback;
-    const licenseChecker = devModeCallback && devModeCallback['vaadin-license-checker'];
-    if (typeof licenseChecker === 'function') {
-      licenseChecker(VcfContextItem);
-    }
   }
 
   ready() {

@@ -1,6 +1,6 @@
 {
   "name": "@vaadin-component-factory/vcf-context-item",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Web Component for customizable item with dependant context menu",
   "main": "theme/lumo/vcf-context-item.js",
   "author": "Vaadin Ltd",
@@ -45,7 +45,6 @@
     "@vaadin/vaadin-context-menu": "^4.3.12",
     "@vaadin/vaadin-element-mixin": "^2.1.3",
     "@vaadin/vaadin-item": "^2.1.1",
-    "@vaadin/vaadin-license-checker": "^2.1.2",
     "@vaadin/vaadin-list-box": "^1.1.1",
     "@vaadin/vaadin-lumo-styles": "^1.5.0",
     "@vaadin/vaadin-themable-mixin": "^1.5.0-alpha2"
